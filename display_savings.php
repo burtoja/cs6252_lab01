@@ -8,20 +8,20 @@ $interest_rate = filter_input ( INPUT_POST, 'interest_rate', FILTER_VALIDATE_FLO
 // validate inputs
 if ($starting_balance == FALSE) {
 	$error_message = 'The starting balance must be a valid number.';
-} else if ($starting_balance <= 0) {
-	$error_message = 'The starting balance must be greater than zero.';
+} else if ($starting_balance < 0) {
+	$error_message = 'The starting balance must be greater than or equal to zero.';
 } else if ($monthly_contributions == FALSE) {
 	$error_message = 'The monthly contribution must be a valid number';
-} else if ($monthly_contributions <= 0) {
-	$error_message = 'The monthly contribution must be greater than zero';
+} else if ($monthly_contributions < 0) {
+	$error_message = 'The monthly contribution must be greater than or equal to zero';
 } else if ($years == FALSE) {
 	$error_message = 'The time to grow in years must be a valid whole number.';
 } else if ($years <= 0) {
-	$error_message = 'The time to grow must be a valid number.';
+	$error_message = 'The time to grow must be a number of years greater than zero.';
 } else if ($interest_rate == FALSE) {
 	$error_message = 'The interest rate must be a valid number.';
-} else if ($interest_rate <= 0 || $interest_rate >= 1) {
-	$error_message = 'The interest rate must be between 0 and 1';
+} else if ($interest_rate <= 0) {
+	$error_message = 'The interest rate must be greater than zero.';
 } else {
 	$error_message = '';
 }
