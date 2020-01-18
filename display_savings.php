@@ -48,16 +48,26 @@ $current_value = $starting_balance;
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Annual Savings</title>
-<link rel="stylesheet" type="text/css" href="main.css">
+
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta name="description" content="">
+  	<meta name="author" content="">
+
+    <title>Savings Calculator</title>
+    
+    <!-- Bootstrap core CSS -->
+  	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
 </head>
 
 <body>
-	<main>
-		<h1>Annual Savings</h1>
-		<table>
+<div class="container">
+<div class="card mx-auto w-50">
+<div class="card-body bg-light">
+    <h1 class="card-title">Annual Savings</h1>
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Year</th>
@@ -83,6 +93,12 @@ $current_value = $starting_balance;
 			</tbody>
 		</table>
 
-	</main>
+</div>
+</div>
+</div>
+	
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.slim.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

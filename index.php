@@ -17,73 +17,87 @@ if (!isset ($interest_rate)) {
 <!DOCTYPE html>
 <html>
 <head>
+
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta name="description" content="">
+  	<meta name="author" content="">
+
     <title>Savings Calculator</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    
+    <!-- Bootstrap core CSS -->
+  	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
 </head>
 
 <body>
-<main>
-    <h1>Savings Calculator</h1>
-    <?php if (!empty($error_message)) { ?>
-        <div id="error_message">
-            <p class="error"><?php echo $error_message; ?></p>
-        </div>
-    <?php } ?>
+<div class="container">
+<div class="card mx-auto w-50">
+<div class="card-body bg-light">
+    <h1 class="card-title">Savings Calculator</h1>
     <form action="display_savings.php" method="post">
-        <div id="data">
-            <label>Starting balance:</label> 
-            <input type="text"
-                   name="starting_balance"
-                   value="<?php echo htmlspecialchars($starting_balance); ?>">
-            <br> 
+        <div class="form-group">
+            <label >Starting balance:</label> 
+            <input 	class="form-control"
+            		type="text"
+                   	name="starting_balance"
+                   	value="<?php echo htmlspecialchars($starting_balance); ?>">
+                   	            
             <?php if (!empty($error_message_balance)) { ?>
-        		<div id="error_message">
-            	<span class="error"><?php echo $error_message_balance; ?></span>
+        		<div class="alert alert-danger" role="alert">
+            		<?php echo $error_message_balance; ?>
         		</div>
     			<?php } ?>
-            <br>
-            
+        </div>
+        <div class="form-group">    
             <label>Monthly contributions:</label> 
-            <input type="text"
-                   name="monthly_contributions"
-                   value="<?php echo htmlspecialchars($monthly_contribution); ?>"> 
-            <br>
-            <?php if (!empty($error_message_contribution)) { ?>
-        		<div id="error_message">
-            	<span class="error"><?php echo $error_message_contribution; ?></span>
-        		</div>
-    			<?php } ?>
-            <br>
-
-            <label>Time to grow in years:</label> 
-            <input type="text"
-                   name="years" 
-                   value="<?php echo htmlspecialchars($years); ?>">
-            <br>
-            <?php if (!empty($error_message_years)) { ?>
-        		<div id="error_message">
-            	<span class="error"><?php echo $error_message_years; ?></span>
-        		</div>
-    			<?php } ?>
-            <br>
+            <input 	class="form-control"
+            		type="text"
+                   	name="monthly_contributions"            
+                   	value="<?php echo htmlspecialchars($monthly_contribution); ?>"> 
             
-            <label>Annual interest rate (interest is compunded monthly):</label>
-            <input type="text" 
-            	   name="interest_rate"
-                   value="<?php echo htmlspecialchars($interest_rate); ?>"> <br>
-			<?php if (!empty($error_message_rate)) { ?>
-        		<div id="error_message">
-            	<span class="error"><?php echo $error_message_rate; ?></span>
+            <?php if (!empty($error_message_contribution)) { ?>
+        		<div class="alert alert-danger" role="alert">
+            		<?php echo $error_message_contribution; ?>
         		</div>
     			<?php } ?>
-            <br>
+         </div>
+         <div class="form-group">
+            <label>Time to grow in years:</label> 
+            <input 	class="form-control"
+            		type="text"
+                   	name="years" 
+                   	value="<?php echo htmlspecialchars($years); ?>">
+            
+            <?php if (!empty($error_message_years)) { ?>
+        		<div class="alert alert-danger" role="alert">
+            		<?php echo $error_message_years; ?>
+        		</div>
+    			<?php } ?>
         </div>
+        <div class="form-group">    
+            <label>Annual interest rate (interest is compunded monthly):</label>
+            <input 	class="form-control"
+            		type="text" 
+            	   	name="interest_rate"
+                   	value="<?php echo htmlspecialchars($interest_rate); ?>"> 
+			<?php if (!empty($error_message_rate)) { ?>
+        		<div class="alert alert-danger" role="alert">
+            		<?php echo $error_message_rate; ?>
+        		</div>
+    			<?php } ?>
+        </div>
+		<button type="submit" class="btn btn-primary">Calculate</button>
 
-        <div id="buttons">
-            <label>&nbsp;</label> <input type="submit" value="Calculate"><br>
-        </div>
 
     </form>
-</main>
+</div>
+</div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.slim.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
 </body>
 </html>
