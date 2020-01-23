@@ -89,7 +89,6 @@ if (!isset ($interest_rate)) {
         </div>
 		<button type="submit" class="btn btn-primary">Calculate</button>
 
-
     </form>
 </div>
 </div>
